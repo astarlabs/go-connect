@@ -26,7 +26,7 @@ func NewMongoConnection() *MongoConnection {
 		return nil
 	}
 
-	section := fileReader.Section("DATABASE")
+	section := fileReader.Section("MONGO")
 
 	host := section.Key("database.host").Value()
 	port := section.Key("database.port").Value()

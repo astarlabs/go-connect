@@ -27,7 +27,7 @@ func NewMySQLConnection() *MySQLConnection {
 		return nil
 	}
 
-	section := fileReader.Section("DATABASE")
+	section := fileReader.Section("MYSQL")
 
 	host := section.Key("database.host").Value()
 	port := section.Key("database.port").Value()
