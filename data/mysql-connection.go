@@ -37,7 +37,7 @@ func NewMySQLConnection() *MySQLConnection {
 
 	mysqlConn := new(MySQLConnection)
 
-	mysqlConn.host = host
+	mysqlConn.host = host + "?parseTime=true"
 	mysqlConn.port, _ = strconv.Atoi(port)
 	mysqlConn.user = user
 	mysqlConn.pass = pass
