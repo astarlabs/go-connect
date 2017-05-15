@@ -37,7 +37,7 @@ func NewMySQLConnection() *MySQLConnection {
 
 	mysqlConn := new(MySQLConnection)
 
-	mysqlConn.host = host + "?parseTime=true"
+	mysqlConn.host = host
 	mysqlConn.port, _ = strconv.Atoi(port)
 	mysqlConn.user = user
 	mysqlConn.pass = pass
@@ -52,7 +52,7 @@ func (connection *MySQLConnection) Connect() (*gorm.DB, error) {
 
 	port := strconv.Itoa(connection.port)
 
-	connectionURL := connection.user + ":" + connection.pass + "@tcp(" + connection.host + ":" + port + ")/" + connection.name + "?charset=utf8&parseTime=True&loc=Local"
+	connectionURL := connection.user + ":" + connection.pass + "@tcp(" + connection.host + ":" + port + ")/" + connection.name + "?parseTime=true&charset=utf8&loc=Local"
 
 	db, err := gorm.Open("mysql", connectionURL)
 	if err != nil {
