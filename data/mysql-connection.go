@@ -6,7 +6,7 @@ import (
 
 	"github.com/go-ini/ini"
 	"github.com/jinzhu/gorm"
-	_ "github.com/regcostajr/mysql"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 // MySQLConnection ...
