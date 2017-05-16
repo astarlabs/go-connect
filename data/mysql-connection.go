@@ -59,5 +59,8 @@ func (connection *MySQLConnection) Connect() (*gorm.DB, error) {
 		return nil, err
 	}
 
-	return db, nil
+	//SET SESSION sql_mode='ALLOW_INVALID_DATES'
+	err = db.Exec("SET SESSION sql_mode='ALLOW_INVALID_DATES'").Error
+
+	return db, err
 }
