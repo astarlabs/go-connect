@@ -6,7 +6,7 @@ import (
 
 	"github.com/go-ini/ini"
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
+	_ "github.com/regcostajr/mysql"
 )
 
 // MySQLConnection ...
@@ -58,9 +58,6 @@ func (connection *MySQLConnection) Connect() (*gorm.DB, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	//SET SESSION sql_mode='ALLOW_INVALID_DATES'
-	err = db.Exec("SET SESSION sql_mode='ALLOW_INVALID_DATES'").Error
 
 	return db, err
 }
